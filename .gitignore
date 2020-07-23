@@ -1,2 +1,2 @@
-/course_materials
-.Rproj.user
+node_modules/
+.idea/
