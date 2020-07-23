@@ -42,17 +42,17 @@ const instructions = magpieViews.view_generator("instructions", {
   name: 'instructions',
   title: 'General Instructions',
   text: `In this experiment, you will be presented with blocks of sentences.
-        <br />
-        Each block will be followed by a related yes-or-no question.
-        <br />
-        So, you will in turn need to first read 2-4 sentences and then answer a question.
-        <br />
-        This is a self-paced reading task. In the beginning, you will only see dashes. 
-        <br />
-        You will need to press the spacebar to replace the dashes with the word it concealed. Please press the spacebar immediately after reading and understanding a word.
-        This causes the previous word to disappear. 
-        <br />
-        Before you start officially, you will get some practice trials to make yourself familiar with the tasks. `,
+  <br />
+  Each block will be followed by a related yes-or-no question.
+  <br />
+  So, you will in turn need to first read 2-4 sentences and then answer a question.
+  <br />
+  This is a self-paced reading task. In the beginning, you will only see dashes. 
+  <br />
+  You will need to press the spacebar to replace the dashes with the word it concealed. Please press the spacebar immediately after reading and understanding a word.
+  This causes the previous word to disappear. 
+  <br />
+  Before you start officially, you will get some practice trials to make yourself familiar with the tasks. `,
   buttonText: 'Go to Trials'
 });
 
@@ -62,22 +62,22 @@ const post_test = magpieViews.view_generator("post_test", {
   trials: 1,
   name: 'post_test',
   title: 'Additional information',
-  text: 'Answering the following questions is optional, but your answers will help us analyze our results.'
+  text: 'Answering the following questions is optional, but your answers will help us analyze our results.',
 
-  // You can change much of what appears here, e.g., to present it in a different language, as follows:
-  // buttonText: 'Weiter',
-  // age_question: 'Alter',
-  // gender_question: 'Geschlecht',
-  // gender_male: 'männlich',
-  // gender_female: 'weiblich',
-  // gender_other: 'divers',
-  // edu_question: 'Höchster Bildungsabschluss',
-  // edu_graduated_high_school: 'Abitur',
-  // edu_graduated_college: 'Hochschulabschluss',
-  // edu_higher_degree: 'Universitärer Abschluss',
-  // languages_question: 'Muttersprache',
-  // languages_more: '(in der Regel die Sprache, die Sie als Kind zu Hause gesprochen haben)',
-  // comments_question: 'Weitere Kommentare'
+
+  buttonText: 'Go on',
+  age_question: 'Age',
+  gender_question: 'Gender',
+  gender_male: 'male',
+  gender_female: 'female',
+  gender_other: 'diverse',
+  edu_question: 'Education',
+  edu_graduated_high_school: 'High School',
+  edu_graduated_college: 'College',
+  edu_higher_degree: 'University',
+  languages_question: 'Level of English based on European Reference',
+  languages_more: '(e.g. A1-C2, if you had no problems with the questions take at least B1)',
+  comments_question: 'Further Comments'
 });
 
 // The 'thanks' view is crucial; never delete it; it submits the results!
@@ -87,6 +87,17 @@ const thanks = magpieViews.view_generator("thanks", {
   title: 'Thank you for taking part in this experiment!',
   prolificConfirmText: 'Press the button'
 });
+
+const practice_trials = magpieViews.view_generator("key_press", {
+  trials: practice.length,
+  name: 'practice',
+  data: practice
+},
+{
+  stimulus_container_generator: key_press_practice_sc,
+  answer_container_generator: question,
+  handle_response_function: key_press_practice_hrf,
+})
 
 /** trial (magpie's Trial Type Views) below
 
@@ -110,24 +121,22 @@ const thanks = magpieViews.view_generator("thanks", {
 * All about the properties of trial views
 * https://magpie-ea.github.io/magpie-docs/01_designing_experiments/01_template_views/#trial-views
 */
+const group = _.sample([0, 1, 2, 3, 4, 5]);
+const trials = key_press_trials[group];
 
+const experiment_data = {
+  trials: trials.length,
+  name: `key_press_trials[${group}]`,
+  data: trials,
+
+}
 
 // Here, we initialize a normal forced_choice view
-const main_experiment = magpieViews.view_generator("self_paced_reading", {
-  // This will use all trials specified in `data`, you can user a smaller value (for testing), but not a larger value
-  trials: trial_info.spr_trials.length,
-  // name should be identical to the variable name
-  name: 'spr_trials',
-  data: _.shuffle(trial_info.spr_trials),
-  // you can add custom functions at different stages through a view's life cycle
-  // hook: {
-  //     after_response_enabled: check_response
-  // }
-},
+const main_experiment = magpieViews.view_generator("key_press", experiment_data,
 {
-  stimulus_container_generator: self_paced_reading_sc,
+  stimulus_container_generator: key_press_sc,
   answer_container_generator: question,
-  handle_response_function: self_paced_reading_hrf
+  handle_response_function: key_press_hrf,
 });
 
 // There are many more templates available:
