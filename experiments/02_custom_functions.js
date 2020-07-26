@@ -31,7 +31,7 @@ const generateID = function(len) {
 
 const key_press_sc = function(config, CT) {
     return `<div class="magpie-view">
-                <h1 class='magpie-view-title'>${config.title}</h1>
+                <h1 class='magpie-view-title'>Main Experiment</h1>
                 <p class='magpie-view-question magpie-view-qud'>${config.data[CT].QUD}</p>
                 <p class='magpie-response-keypress-header hidden'>
                 <strong>${config.data[CT].key1}</strong> = ${config.data[CT][config.data[CT].key1]},
@@ -160,7 +160,6 @@ const key_press_hrf = function (config, CT, magpie, answer_container_generator, 
                 }
             }
         } else if (e.which === 32 && bool_knowledge && bool_trigger && bool_continuation === false && sentence3.length !== 0) {
-
             let sentence = sentence3;
             if (showNeighbor && wordList.length === 0 && bool_knowledge && bool_trigger && bool_continuation === false) {
                 wordList = createWordList(wordList, counter, sentence);
@@ -438,16 +437,16 @@ const key_press_practice_hrf = function (config, CT, magpie, answer_container_ge
             if (keyPressed === config.data[CT].key1 || keyPressed === config.data[CT].key2) {
                 let correctness;
                 const RT = Date.now() - startingTime; // measure RT before anything else
-
+                
                 if (
                     config.data[CT].expected ===
-                    config.data[CT][keyPressed.toUpperCase()]
+                    keyPressed
                 ) {
                     correctness = "correct";
                 } else {
                     correctness = "incorrect";
                 }
-
+                console.log(correctness);
                 if (correctness === "correct") {
                     alert('Your answer is correct! Yey!');
                 } else if (correctness === "incorrect"){
