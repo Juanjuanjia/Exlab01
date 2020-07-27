@@ -2601,7 +2601,7 @@ const key_press_trials = [
 	wordPos: "next",
 	underline: "none",
 	filler: false,
-	condition: "cancel_strong"
+	condition: "cancel_strong",
 },
 {
 	QUD: "Press the spacebar to reveal the next words/sentence.",
@@ -2633,11 +2633,11 @@ const key_press_trials = [
 	wordPos: "next",
 	underline: "none",
 	filler: false,
-	condition: "anaphor_weak"
+	condition: "anaphor_weak",
 },
 {
 	QUD: "Press the spacebar to reveal the next words/sentence.",
-	question: "Should I have chosen a different place to sit? ",
+	question: "Should I have chosen a different place to sit?",
 	key1: "Y",
 	key2: "N",
     	Y: "Yes",
@@ -2665,7 +2665,7 @@ const key_press_trials = [
 	wordPos: "next",
 	underline: "none",
 	filler: false,
-	condition: "literal_weak"
+	condition: "literal_weak",
 },
 {
 	QUD: "Press the spacebar to reveal the next words/sentence.",
@@ -2697,7 +2697,7 @@ const key_press_trials = [
 	wordPos: "next",
 	underline: "none",
 	filler: false,
-	condition: "anaphor_strong"
+	condition: "anaphor_strong",
 },
 {
 	QUD: "Press the spacebar to reveal the next words/sentence.",
@@ -2761,7 +2761,7 @@ const key_press_trials = [
 	wordPos: "next",
 	underline: "none",
 	filler: false,
-	condition: "literal_strong"
+	condition: "literal_strong",
 },
 {
 	QUD: "Press the spacebar to reveal the next words/sentence.",
@@ -2793,7 +2793,7 @@ const key_press_trials = [
 	wordPos: "next",
 	underline: "none",
 	filler: false,
-	condition: "cancel_strong"
+	condition: "cancel_strong",
 },
 {
 	QUD: "Press the spacebar to reveal the next words/sentence.",
@@ -2825,7 +2825,7 @@ const key_press_trials = [
 	wordPos: "next",
 	underline: "none",
 	filler: false,
-	condition: "anaphor_weak"
+	condition: "anaphor_weak",
 },
 {
 	QUD: "Press the spacebar to reveal the next words/sentence.",
@@ -2857,7 +2857,7 @@ const key_press_trials = [
 	wordPos: "next",
 	underline: "none",
 	filler: false,
-	condition: "literal_weak"
+	condition: "literal_weak",
 },
 {
 	QUD: "Press the spacebar to reveal the next words/sentence.",
@@ -2889,7 +2889,7 @@ const key_press_trials = [
 	wordPos: "next",
 	underline: "none",
 	filler: false,
-	condition: "anaphor_strong"
+	condition: "anaphor_strong",
 },
 {
 	QUD: "Press the spacebar to reveal the next words/sentence.",
@@ -2953,7 +2953,7 @@ const key_press_trials = [
 	wordPos: "next",
 	underline: "none",
 	filler: false,
-	condition: "literal_strong"
+	condition: "literal_strong",
 },
 {
 	QUD: "Press the spacebar to reveal the next words/sentence.",
@@ -2984,7 +2984,7 @@ const key_press_trials = [
 	sentence_continuation: "In fact, they all did because of the recent economic downturn.",
 	wordPos: "next",
 	underline: "none",
-	condition: "cancel_strong"
+	condition: "cancel_strong",
 },
 {
 	QUD: "Press the spacebar to reveal the next words/sentence.",
@@ -3016,7 +3016,7 @@ const key_press_trials = [
 	wordPos: "next",
 	underline: "none",
 	filler: false,
-	condition: "anaphor_weak"
+	condition: "anaphor_weak",
 },
 {
 	QUD: "Press the spacebar to reveal the next words/sentence.",
@@ -3080,7 +3080,7 @@ const key_press_trials = [
 	wordPos: "next",
 	underline: "none",
 	filler: false,
-	condition: "anaphor_strong"
+	condition: "anaphor_strong",
 },
 {
 	QUD: "Press the spacebar to reveal the next words/sentence.",
@@ -3144,7 +3144,7 @@ const key_press_trials = [
 	wordPos: "next",
 	underline: "none",
 	filler: false,
-	condition: "literal_strong"
+	condition: "literal_strong",
 },
 {
 	QUD: "Press the spacebar to reveal the next words/sentence.",
@@ -3175,7 +3175,7 @@ const key_press_trials = [
 	sentence_continuation: "In fact, they all were which made the test fairly simple.",
 	wordPos: "next",
 	underline: "none",
-	condition: "cancel_strong"
+	condition: "cancel_strong",
 },
 {
 	QUD: "Press the spacebar to reveal the next words/sentence.",
@@ -3207,7 +3207,7 @@ const key_press_trials = [
 	wordPos: "next",
 	underline: "none",
 	filler: false,
-	condition: "anaphor_weak"
+	condition: "anaphor_weak",
 },
 {
 	QUD: "Press the spacebar to reveal the next words/sentence.",
@@ -3239,7 +3239,7 @@ const key_press_trials = [
 	wordPos: "next",
 	underline: "none",
 	filler: false,
-	condition: "literal_weak"
+	condition: "literal_weak",
 },
 {
 	QUD: "Press the spacebar to reveal the next words/sentence.",
@@ -3271,7 +3271,7 @@ const key_press_trials = [
 	wordPos: "next",
 	underline: "none",
 	filler: false,
-	condition: "anaphor_strong"
+	condition: "anaphor_strong",
 },
 {
 	QUD: "Press the spacebar to reveal the next words/sentence.",
