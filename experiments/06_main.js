@@ -16,8 +16,9 @@ $("document").ready(function() {
         // You have to specify all views you want to use in this experiment and the order of them
         views_seq: [
             intro,
-            instructions,
+            instructions_practice,
             practice_trials,
+            instructions_main,
             main_experiment,
             post_test,
             thanks,
@@ -25,11 +26,11 @@ $("document").ready(function() {
         // Here, you can specify all information for the deployment
         deploy: {
             experimentID: "167",
-            serverAppURL: "https://magpie-demo.herokuapp.com/api/submit_experiment/https://magpie-demo.herokuapp.com/api/submit_experiment/",
+            serverAppURL: "https://magpie-demo.herokuapp.com/api/submit_experiment/",
             // Possible deployment methods are:
             // "debug" and "directLink"
             // As well as "MTurk", "MTurkSandbox" and "Prolific"
-            deployMethod: "debug",
+            deployMethod: "directLinkS",
             contact_email: "jara.treewalker@outlook.de",
             prolificURL: ""
         },

@@ -26,18 +26,19 @@ const intro = magpieViews.view_generator("intro", {
   text: `Thank you for considering to take part in our experiment. The whole task will take approximately 30 minutes. 
   <br />
   <br />
-  In order to ensure the quality of the data, we would like to kindly ask you to make sure you can work in a silent environment without the possibility of distractions. For example, switch your phone off and disable notifications on your computer.
+  In order to ensure the quality of the data, it would be great that you make sure you can work in a silent environment 
+  without the possibility of distractions. For example, switch your phone off and disable notifications on your computer.
   <br />
   <br />
   The data will be processed anonymously and be only used for our research purpose. 
   <br />
   <br />
-  If you are ready, please press the button below to get to the instructions.`,
+  If you are ready, please press the button below to read the instructions.`,
   buttonText: 'Go to Instructions'
 });
 
 // For most tasks, you need instructions views
-const instructions = magpieViews.view_generator("instructions", {
+const instructions_practice = magpieViews.view_generator("instructions", {
   trials: 1,
   name: 'instructions',
   title: 'General Instructions',
@@ -49,8 +50,43 @@ const instructions = magpieViews.view_generator("instructions", {
   <br />
   This is a self-paced reading task. In the beginning, you will only see dashes. 
   <br />
+  <br />
   You will need to press the spacebar to replace the dashes with the word it concealed. Please press the spacebar immediately after reading and understanding a word.
-  This causes the previous word to disappear. 
+  This causes the previous word to disappear. Please be as fast and accurate as possible with pressing the spacebar.
+  <br />
+  <br />
+  After reading the sentences answer the comprehension question of the sentences by pressing Y for Yes and N for No. 
+  Again be as fast and accurate as possible.
+  <br />
+  <br />
+  Before you start officially, you will get ten practice trials to make yourself familiar with the tasks. `,
+  buttonText: 'Go to Practice Trials'
+});
+
+const instructions_main = magpieViews.view_generator("instructions", {
+  trials: 1,
+  name: 'instructions',
+  title: 'General Instructions',
+  text: `Thank you for doing the practice trials, you can now continue with the Main Experiment Trials.
+  As a reminder shortly look through the instructions again.
+  <br />
+  <br />
+  You will again be presented with blocks of sentences.
+  <br />
+  Each block will be followed by a related yes-or-no question.
+  <br />
+  So, you will in turn need to first read 2-4 sentences and then answer a question.
+  <br />
+  This is a self-paced reading task. In the beginning, you will only see dashes. 
+  <br />
+  <br />
+  You will need to press the spacebar to replace the dashes with the word it concealed. Please press the spacebar immediately after reading and understanding a word.
+  This causes the previous word to disappear. Please be as fast and accurate as possible with pressing the spacebar.
+  <br />
+  <br />
+  After reading the sentences answer the comprehension question of the sentences by pressing Y for Yes and N for No. 
+  Again be as fast and accurate as possible.
+  <br />
   <br />
   Before you start officially, you will get some practice trials to make yourself familiar with the tasks. `,
   buttonText: 'Go to Trials'
