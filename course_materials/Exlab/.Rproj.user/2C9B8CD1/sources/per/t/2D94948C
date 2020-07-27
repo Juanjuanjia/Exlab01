@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1590571166693.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1253123016",
+    "id" : "2D94948C",
+    "lastKnownWriteTime" : 1590597244,
+    "last_content_update" : 1590597244903,
+    "path" : "D:/Master/SS20/EPLab/course_materials/Exlab/Bayesian_Intro.R",
+    "project_path" : "Bayesian_Intro.R",
+    "properties" : {
+        "cursorPosition" : "12,0",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

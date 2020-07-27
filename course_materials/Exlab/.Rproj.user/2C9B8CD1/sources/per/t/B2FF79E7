@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1594282237528.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3632566203",
+    "id" : "B2FF79E7",
+    "lastKnownWriteTime" : 1594371981,
+    "last_content_update" : 1594371981823,
+    "path" : "D:/Master/SS20/EPLab/analyses/01_pilot/00_data_preliminary.R",
+    "project_path" : null,
+    "properties" : {
+        "cursorPosition" : "34,24",
+        "scrollLine" : "22",
+        "tempName" : "Untitled1"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
