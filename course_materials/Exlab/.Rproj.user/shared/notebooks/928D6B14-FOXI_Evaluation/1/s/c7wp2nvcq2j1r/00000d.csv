@@ -1,1 +1,0 @@
-"0","barplot(grades$Quiz..From.Neurons.to.Brain.Functions...Assessment..Real., main = ""Quiz Neurons to Brain Functions Neuroscience"", ylab = ""Score out of 10"", names.arg = grades$First.name)"

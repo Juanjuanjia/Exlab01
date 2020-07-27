@@ -1,8 +1,0 @@
-"0","knitr::opts_chunk$set(echo = TRUE)"
-"0","library(tidyverse)"
-"0","library(stringi)"
-"0","#setwd(""/Users/Elen/Documents/CogSci/J6+/Course_evaluation/J6plus"")"
-"0","#setwd(""D:/Master/Joint study project/Evaluation/J6plus"")"
-"0","library(RMariaDB)"
-"0","library(RMySQL)"
-"0",""

@@ -1,4 +1,0 @@
-"0","MoodleDB <- dbConnect(RMariaDB::MariaDB(), user='moodle', password=password, host='127.0.0.1', port=3306)
-"
-"2","错误: Failed to connect: Can't connect to MySQL server on '127.0.0.1' (0)
-"
