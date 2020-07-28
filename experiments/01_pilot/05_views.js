@@ -29,6 +29,7 @@ const intro = magpieViews.view_generator("intro", {
   <br />
   In order to ensure the quality of the data, it would be great that you make sure you can work in a silent environment 
   without the possibility of distractions. For example, switch your phone off and disable notifications on your computer.
+  Besides, you are only allowed to take part in this experiment only ONCE.
   <br />
   <br />
   The data will be processed anonymously and be only used for our research purpose. 
