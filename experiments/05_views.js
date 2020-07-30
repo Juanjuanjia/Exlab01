@@ -17,6 +17,8 @@
     * More about the properties and functions of the wrapping views - https://magpie-ea.github.io/magpie-docs/01_designing_experiments/01_template_views/#wrapping-views
 
 */
+// Global random parameter to decide which group a participant belongs to 
+const group = _.sample([0, 1, 2, 3, 4, 5]);
 
 // Every experiment should start with an intro view. Here you can welcome your participants and tell them what the experiment is about
 const intro = magpieViews.view_generator("intro", {
@@ -28,6 +30,7 @@ const intro = magpieViews.view_generator("intro", {
   <br />
   In order to ensure the quality of the data, it would be great that you make sure you can work in a silent environment 
   without the possibility of distractions. For example, switch your phone off and disable notifications on your computer.
+  Besides, you are only allowed to take part in this experiment only ONCE. 
   <br />
   <br />
   The data will be processed anonymously and be only used for our research purpose. 
@@ -42,16 +45,11 @@ const instructions_practice = magpieViews.view_generator("instructions", {
   trials: 1,
   name: 'instructions',
   title: 'General Instructions',
-  text: `In this experiment, you will be presented with blocks of sentences.
+  text: `In this experiment, you will be presented with blocks of sentences. Each block will be followed by a related yes-or-no question. So, you will in turn need to first read 2-4 sentences and then answer a question.
   <br />
-  Each block will be followed by a related yes-or-no question.
-  <br />
-  So, you will in turn need to first read 2-4 sentences and then answer a question.
   <br />
   This is a self-paced reading task. In the beginning, you will only see dashes. 
-  <br />
-  <br />
-  You will need to press the spacebar to replace the dashes with the word it concealed. Please press the spacebar immediately after reading and understanding a word.
+  You will need to press the spacebar to replace each dash with the word it concealed. Please press the spacebar immediately after reading and understanding a word.
   This causes the previous word to disappear. Please be as fast and accurate as possible with pressing the spacebar.
   <br />
   <br />
@@ -59,36 +57,42 @@ const instructions_practice = magpieViews.view_generator("instructions", {
   Again be as fast and accurate as possible.
   <br />
   <br />
-  Before you start officially, you will get ten practice trials to make yourself familiar with the tasks. `,
+  You are in <strong>group ${group}</strong>, if any problems occur please make a screenshot and write an email to <strong>jara.treewalker@outlook.de</strong>. 
+  To be able to do so please write down your group and this email address.
+  <br />
+  <br />
+  Before you start officially, you will get ten practice trials to make yourself familiar with the tasks.`,
   buttonText: 'Go to Practice Trials'
 });
+
 
 const instructions_main = magpieViews.view_generator("instructions", {
   trials: 1,
   name: 'instructions',
   title: 'General Instructions',
-  text: `Thank you for doing the practice trials, you can now continue with the Main Experiment Trials.
-  As a reminder shortly look through the instructions again.
+  text: `Thank you for doing the practice trials, you can now continue with the Main Experiment Trials. Please shortly look through the instructions again as a reminder.
   <br />
   <br />
-  You will again be presented with blocks of sentences.
-  <br />
+  You will be presented with blocks of sentences.
   Each block will be followed by a related yes-or-no question.
-  <br />
   So, you will in turn need to first read 2-4 sentences and then answer a question.
   <br />
-  This is a self-paced reading task. In the beginning, you will only see dashes. 
   <br />
+  This is a self-paced reading task. In the beginning, you will only see dashes. 
   <br />
   You will need to press the spacebar to replace the dashes with the word it concealed. Please press the spacebar immediately after reading and understanding a word.
   This causes the previous word to disappear. Please be as fast and accurate as possible with pressing the spacebar.
   <br />
   <br />
   After reading the sentences answer the comprehension question of the sentences by pressing Y for Yes and N for No. 
-  Again be as fast and accurate as possible.
+  Again be as fast and accurate as possible. For the main trials, there is no feedback for the comprehension questions.
   <br />
   <br />
-  Before you start officially, you will get some practice trials to make yourself familiar with the tasks. `,
+  You are in <strong>group ${group}</strong>, if any problems occur please make a screenshot and write an email to <strong>jara.treewalker@outlook.de</strong>. 
+  To be able to do so please write down your group and this email address.
+  <br />
+  <br />
+  If you are ready for the main trials, please click the button below. `,
   buttonText: 'Go to Trials'
 });
 
@@ -98,7 +102,7 @@ const post_test = magpieViews.view_generator("post_test", {
   trials: 1,
   name: 'post_test',
   title: 'Additional information',
-  text: 'Answering the following questions is optional, but your answers will help us analyze our results.',
+  text: 'Answering the following questions is optional, but your answers will help us analyze our results better.',
 
 
   buttonText: 'Go on',
@@ -108,11 +112,11 @@ const post_test = magpieViews.view_generator("post_test", {
   gender_female: 'female',
   gender_other: 'diverse',
   edu_question: 'Education',
-  edu_graduated_high_school: 'High School',
-  edu_graduated_college: 'College',
-  edu_higher_degree: 'University',
+  edu_graduated_high_school: 'High School or lower',
+  edu_graduated_college: 'Bachelor or Master',
+  edu_higher_degree: 'Beyond Master',
   languages_question: 'Level of English based on European Reference',
-  languages_more: '(e.g. A1-C2, if you had no problems with the questions take at least B1)',
+  languages_more: '(e.g. native speaker or A1-C2, if you had no problems with the questions take at least B1)',
   comments_question: 'Further Comments'
 });
 
@@ -157,15 +161,15 @@ const practice_trials = magpieViews.view_generator("key_press", {
 * All about the properties of trial views
 * https://magpie-ea.github.io/magpie-docs/01_designing_experiments/01_template_views/#trial-views
 */
-const group = _.sample([0, 1, 2, 3, 4, 5]);
 const trials = key_press_trials[group];
 
 const experiment_data = {
   trials: trials.length,
   name: `key_press_trials[${group}]`,
   data: trials,
-
+  group: group,
 }
+
 
 // Here, we initialize a normal forced_choice view
 const main_experiment = magpieViews.view_generator("key_press", experiment_data,

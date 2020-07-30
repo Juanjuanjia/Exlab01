@@ -30,7 +30,7 @@ $("document").ready(function() {
             // Possible deployment methods are:
             // "debug" and "directLink"
             // As well as "MTurk", "MTurkSandbox" and "Prolific"
-            deployMethod: "directLinkS",
+            deployMethod: "directLink",
             contact_email: "jara.treewalker@outlook.de",
             prolificURL: ""
         },
