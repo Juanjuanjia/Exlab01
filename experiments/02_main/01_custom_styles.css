@@ -1,0 +1,51 @@
+/* In this file you can overwrite/extend the given magpie-styles or declare your own ones */
+
+/* Example of extending a given magpie-style */
+
+/*.magpie-view-stimulus-container {
+    height: auto;
+    max-height: 350px;
+} */
+
+/* Display all titles in red */
+/*.magpie-view-title {
+    color: red;
+}*/
+
+/* Example of declaring your own style */
+.description {
+    color: rgba(0, 0, 0, 0.87);
+    font-size: 17px;
+    line-height: 27px;
+    font-family: "Lato", "Noto Sans", sans-serif;
+    margin: 30px auto;
+    max-width: 550px;
+    text-align: center;
+}
+
+.custom-border {
+   border: 1px solid powderblue;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.word {
+    color: rgba(0, 0, 0, 0.87);
+    font-family: "Lato", "Noto Sans", sans-serif;
+    font-size: 17px;
+    display: flex;
+    text-align: center;
+    line-height: 27px;
+    margin: 0 4px;
+    position: relative;
+}
+
+ .sentence_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0px 50px;
+  }
