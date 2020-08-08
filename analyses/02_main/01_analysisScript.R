@@ -74,7 +74,15 @@ for(i in 1:len){
 } 
 data_correctness_percentage <- cbind(data_correctness, correctness)
 data_correctness_percentage %>% 
-  ggplot(aes(x = submission_id, y=correctness)) + geom_point() + ylim(0,1)
+  ggplot(aes(x = submission_id, y=correctness)) + geom_point() + ylim(0,1) +
+  theme(
+    panel.background = element_rect(fill = "transparent"), 
+    plot.background = element_rect(fill = "transparent", color = NA),
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(),
+    legend.background = element_rect(fill = "transparent"), 
+    legend.box.background = element_rect(fill = "transparent") 
+  )
 
 data_filter_co <- data_correctness_percentage #!!!!!!!!!!!!!!!!!!!!!!
 
@@ -232,13 +240,29 @@ rt_critical_factors_sum <- rt_critical_factors %>% group_by(trigger, knowledge) 
 rt_critical_factors$knowtrig <- interaction(rt_critical_factors$knowledge, 
                                             rt_critical_factors$trigger)
 ggplot(aes(y = rt_trigger_critical, x = knowtrig), 
-       data = rt_critical_factors) + geom_boxplot()
+       data = rt_critical_factors) + geom_boxplot() +
+  theme(
+    panel.background = element_rect(fill = "transparent"), 
+    plot.background = element_rect(fill = "transparent", color = NA), 
+    panel.grid.major = element_blank(), 
+    panel.grid.minor = element_blank(), 
+    legend.background = element_rect(fill = "transparent"), 
+    legend.box.background = element_rect(fill = "transparent") 
+  )
 
 # plot Rts of critical regions in complement sentences
 rt_critical_factors$knowtrig <- interaction(rt_critical_factors$knowledge, 
                                             rt_critical_factors$trigger)
 ggplot(aes(y = rt_continuation_critical, x = knowtrig), 
-       data = rt_critical_factors) + geom_boxplot()
+       data = rt_critical_factors) + geom_boxplot() +
+  theme(
+    panel.background = element_rect(fill = "transparent"), 
+    plot.background = element_rect(fill = "transparent", color = NA),
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(),
+    legend.background = element_rect(fill = "transparent"), 
+    legend.box.background = element_rect(fill = "transparent") 
+  )
 
 rt_critical_factors %>% 
   ggplot(aes(x = rt_trigger_critical)) + 
