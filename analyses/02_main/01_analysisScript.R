@@ -84,14 +84,17 @@ data_correctness_percentage %>%
     legend.box.background = element_rect(fill = "transparent") 
   )
 
-data_filter_co <- data_correctness_percentage 
+## find participant_ids whose correctness of comprehension questions equals to and beyond 80%
+data_filter_co <- data_correctness_percentage %>% select(submission_id, correctness) %>%
+  filter(correctness>=0.8) 
 
 ### 3.2 calculate avarage respond accuracy
 average_accuracy <- mean(data_correctness_percentage$correctness)
 average_accuracy
 # average accuracy = 0.84
 
-### 3.3 select relevant variables for the main analyse and exclude concelation condition
+### 3.3 exclude data points when respond accuracy below 80% 
+### and select relevant variables for the main analyse and exclude concelation condition
 data_clean <- data_rV %>% filter(submission_id %in% data_filter_co$submission_id) %>% 
   filter(filler == "FALSE") %>% 
   select(submission_id, condition, reactionTimes_continuation, 
