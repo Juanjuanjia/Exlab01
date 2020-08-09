@@ -15,11 +15,11 @@ This order contains files where the experimental data incluing pilot data and ma
 
 ### experiments
 
-This order contains files where implementations of both pilot study and main study are seperately stored. 
+This order contains files where the code of implementations of both pilot study and main study are seperately stored. 
 
 ### writing
 
-This order contains three files: Preregistration Report, Description of Experimental design, and final report.
+This order contains three files: Preregistration Report, Description of Experimental design, and the final report.
 
 
 
